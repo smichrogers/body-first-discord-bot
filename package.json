@@ -1,0 +1,19 @@
+{
+  "name": "body-first-discord-bot",
+  "version": "1.0.0",
+  "description": "A low-demand, non-AI Discord decision guide for choosing what the body needs first.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --check index.js && node --check deploy-commands.js && node --check screens.js && node test-structure.js",
+    "start": "node index.js"
+  },
+  "keywords": ["discord", "accessibility", "body-care", "decision-support"],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "discord.js": "^14.27.0",
+    "dotenv": "^17.4.2"
+  }
+}
