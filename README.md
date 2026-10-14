@@ -24,11 +24,13 @@ Never commit or share the `.env` file or bot token.
 - Private or shared Discord sessions
 - Session ownership protection
 - Back, **That’s enough for now**, and Start over controls
+- The global stopping control is omitted when the screen already includes the same choice
 - Start over hidden on the repeated-use reflection
 - Fourth genuine **Start with fluids** initiation within 10 minutes opens the reassurance/checking reflection
 - Reflection never blocks access to the decision tree
 - Short-lived navigation history and timestamps stored only in process memory
 - Discord-specific About, Terms, and Privacy information
+- The educational-use footer appears only on Home and About
 - No medical urgency screen, symptom-investigation path, timers, tracking, scores, or saved answers
 
 ## Discord appearance and accessibility

@@ -44,8 +44,13 @@ function createScreen(screenId, userId) {
   const embed = new EmbedBuilder()
     .setColor(0x78aeb2)
     .setTitle(screen.title)
-    .setDescription(screen.description)
-    .setFooter({ text: "General educational support. Not medical advice, monitoring, or a saved care record." });
+    .setDescription(screen.description);
+
+  if (["home", "about"].includes(screenId)) {
+    embed.setFooter({
+      text: "General educational support. Not medical advice, monitoring, or a saved care record."
+    });
+  }
 
   const rows = [];
   for (let index = 0; index < (screen.buttons ?? []).length; index += 5) {
@@ -62,11 +67,19 @@ function createScreen(screenId, userId) {
   }
 
   if (!["home", "paused"].includes(screenId)) {
-    const utility = new ActionRowBuilder()
-      .addComponents(
-        new ButtonBuilder().setCustomId(`back:${userId}`).setLabel("← Back").setStyle(ButtonStyle.Secondary),
+    const hasStopChoice = (screen.buttons ?? []).some(button =>
+      button.to === "enough" ||
+      button.to === "paused" ||
+      button.label.toLowerCase().includes("that’s enough for now")
+    );
+    const utility = new ActionRowBuilder().addComponents(
+      new ButtonBuilder().setCustomId(`back:${userId}`).setLabel("← Back").setStyle(ButtonStyle.Secondary)
+    );
+    if (!hasStopChoice) {
+      utility.addComponents(
         new ButtonBuilder().setCustomId(`enough:${userId}`).setLabel("That’s enough for now").setStyle(ButtonStyle.Secondary)
       );
+    }
     if (screenId !== "reflection") {
       utility.addComponents(
         new ButtonBuilder().setCustomId(`restart:${userId}`).setLabel("Start over ↻").setStyle(ButtonStyle.Secondary)

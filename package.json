@@ -1,6 +1,6 @@
 {
   "name": "body-first-discord-bot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A low-demand, non-AI Discord decision guide for choosing what the body needs first.",
   "main": "index.js",
   "scripts": {

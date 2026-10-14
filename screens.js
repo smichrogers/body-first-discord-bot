@@ -17,7 +17,7 @@ const screens = {
     description: [
       "**Food and fluids → immediate body needs → rest → everything else.**",
       "A task being important does not mean:\n• It has to happen right now.\n• I have to finish all of it.\n• Delaying it means I am unsafe.\n• Another basic need ‘stole’ energy from it.\n• I failed if my body cannot do it today.",
-      "Food did not ruin hygiene.\nA bowel movement did not ruin the day.\nRest does not ruin progress.",
+      "Rest does not ruin progress.",
       "When two things compete, I don’t have to find the perfect choice. I choose the more basic need, make the task as small as possible, and we figure out the rest later."
     ].join("\n\n"),
     buttons: [{ label: "Start with fluids", to: "fluids", style: "primary", begins: true }]
